@@ -25,6 +25,11 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      - name: Debug Azure Env Vars
+        run: |
+          echo "SUBSCRIPTION: $ARM_SUBSCRIPTION_ID"
+          echo "CLIENT: $ARM_CLIENT_ID"
+          echo "TENANT: $ARM_TENANT_ID"
 
       - name: Terraform Init
         run: terraform init
