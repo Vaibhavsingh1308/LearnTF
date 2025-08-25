@@ -42,6 +42,17 @@ jobs:
           TF_VAR_SP_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
           TF_VAR_SP_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
 
+      - name: Upload plan
+        uses: actions/upload-artifact@v4
+        with:
+          name: tfplan
+          path: tfplan
+
+      - name: Download plan
+        uses: actions/download-artifact@v4
+        with:
+          name: tfplan
+      
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
         env:
