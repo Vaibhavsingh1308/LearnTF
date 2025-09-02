@@ -15,27 +15,26 @@ variable "SP_TENANT_ID" {
   description = "Azure Tenant ID"
 }
 variable "resource_group_name" {
-  description = "Name of the Azure Resource Group"
+  description = "Name of the resource group"
   type        = string
 }
 
 variable "location" {
-  description = "Azure region/location"
+  description = "Azure location"
   type        = string
 }
 
 variable "acr_name" {
-  description = "Name of the Azure Container Registry"
+  description = "Azure Container Registry name"
   type        = string
 }
 
 variable "app_service_plan_name" {
-  description = "Name of the Azure App Service Plan"
+  description = "App Service Plan name"
   type        = string
 }
 
 variable "app_service_name" {
-  description = "Name of the Azure Web App"
+  description = "Web App name"
   type        = string
 }
-

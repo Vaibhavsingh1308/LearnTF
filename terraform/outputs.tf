@@ -1,7 +1,9 @@
-output "public_ip" {
-  description = "Public IP of the VM"
-  value       = azurerm_public_ip.public_ip.ip_address
+output "acr_login_server" {
+  description = "Login server of the ACR"
+  value       = azurerm_container_registry.acr.login_server
 }
-output "app_url" {
-  value = azurerm_web_app.app.default_site_hostname
+
+output "web_app_url" {
+  description = "URL of the Linux Web App"
+  value       = azurerm_linux_web_app.app.default_site_hostname
 }
