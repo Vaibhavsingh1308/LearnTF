@@ -15,21 +15,27 @@ variable "SP_TENANT_ID" {
   description = "Azure Tenant ID"
 }
 variable "resource_group_name" {
-  default = "next-app-rg"
+  description = "Name of the Azure Resource Group"
+  type        = string
 }
 
 variable "location" {
-  default = "eastus"
-}
-
-variable "app_service_plan_name" {
-  default = "next-app-plan"
-}
-
-variable "app_service_name" {
-  default = "next-app-web"
+  description = "Azure region/location"
+  type        = string
 }
 
 variable "acr_name" {
-  default = "nextappacr"
+  description = "Name of the Azure Container Registry"
+  type        = string
 }
+
+variable "app_service_plan_name" {
+  description = "Name of the Azure App Service Plan"
+  type        = string
+}
+
+variable "app_service_name" {
+  description = "Name of the Azure Web App"
+  type        = string
+}
+

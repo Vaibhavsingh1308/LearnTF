@@ -1,28 +1,49 @@
+provider "azurerm" {
+  features {}
+}
+
+# Resource Group
 resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
   location = var.location
 }
 
+# Azure Container Registry
 resource "azurerm_container_registry" "acr" {
   name                = var.acr_name
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
-  sku                 = "Basic"
-  admin_enabled       = true
+  sku                 = "Premium"
+  admin_enabled       = true  # enable to use admin credentials
+
+  georeplications {
+    location                = "East US"
+    zone_redundancy_enabled = true
+    tags                    = {}
+  }
+
+  georeplications {
+    location                = "North Europe"
+    zone_redundancy_enabled = true
+    tags                    = {}
+  }
 }
 
+# App Service Plan
 resource "azurerm_app_service_plan" "plan" {
   name                = var.app_service_plan_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   kind                = "Linux"
   reserved            = true
+
   sku {
     tier = "B1"
     size = "B1"
   }
 }
 
+# Web App
 resource "azurerm_web_app" "app" {
   name                = var.app_service_name
   location            = azurerm_resource_group.rg.location
