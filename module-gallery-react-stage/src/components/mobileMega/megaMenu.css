@@ -1,0 +1,124 @@
+.navigation-menu>.menu-list{
+    @apply flex flex-col lg:flex-row space-y-0 font-normal  text-brandBlack lg:flex items-start lg:items-center gap-4 2lg:gap-[32px] lg:gap-[20px] text-base [&>li>a:hover]:text-brandSecondary w-full;
+}
+.navigation-menu>.menu-list .menu-item-list-level-1{
+    @apply w-full;
+}
+.navigation-menu>.menu-list .menu-item.menu-item-level-1.dropdown{
+    @apply block w-full lg:border-none relative;
+}
+.navigation-menu>.menu-list .menu-item-list-level-1 .menu-item.menu-item-level-1.dropdown button.menu-trigger.active-2.menu-button-level-2{
+    content: "";
+}
+.menu-list .menu-trigger {@apply bg-brandWhite;}
+
+  
+
+.menu-item.menu-item-level-2.is-parent .menu-link-level-3{
+    @apply pointer-events-none;
+}
+.navigation-menu>.menu-list .menu-item.menu-item-level-1.dropdown button.menu-trigger.menu-button-level-2 {
+    content: ">";
+}
+button.menu-trigger.menu-button-level-2::after{
+    content: "▼";
+    font-size: 10px;
+    margin-left: 3px;
+}
+button.menu-trigger.active-2.menu-button-level-2::after{
+    content: "▲";
+    font-size: 10px;
+    margin-left: 3px;
+    position: relative;
+    top: -2px;
+}
+ 
+.menu-content{
+    @apply z-[9999] left-0 bg-brandWhite !transition-all !duration-300 !ease-in-out !translate-x-0 opacity-100 visible pointer-events-auto w-full lg:w-[480px] 5xl:w-[480px] shadow-none lg:shadow-navshadow border-0 rounded-none mt-5 fixed top-0 lg:top-auto lg:absolute min-h-full lg:min-h-0 lg:!transform-none lg:!translate-x-0;
+}
+.menu-content.menu-content-level-2 .mega-menu-items  {
+    @apply mt-2
+}
+.menu-content.menu-content-level-3 .mega-menu-items {
+    @apply mt-0
+}
+.menu-content .menu-list .mega-menu-items:first-child {
+    @apply mt-0
+}
+.menu-content .menu-list, li.menu-item-list-level-1.top-level-1 .menu-content .menu-list{
+    @apply flex flex-col overflow-x-hidden lg:overflow-x-auto  overflow-y-scroll lg:h-[73svh] lg:!pt-4 pb-4 !pt-[100px] h-[calc(100dvh)] gap-[3px];
+}
+.menu-content .menu-list .menu-trigger,  .menu-content .menu-list .same-level-child .dropdown .menu-link.menu-link-level-3{
+    @apply  ml-0 px-5 py-[6px] block hover:lg:bg-grey100 text-left relative text-body text-brandBlack lg:hover:text-brandSecondary w-full p-0 leading-5 !transition !duration-75 font-bold lg:border-l-4 border-l-transparent hover:lg:border-l-4 hover:lg:!border-brandSecondary [&.active-3]:lg:text-brandSecondary [&.active-3]:lg:bg-grey100 [&.active-3]:lg:border-l-4 [&.active-3]:lg:!border-brandSecondary  after:content-['\e846'] after:text-[12px] after:text-brandSecondary  after:absolute after:lg:right-5 after:right-[26px];
+}
+.menu-content .menu-list .same-level-child .menu-link.menu-link-level-3{
+    @apply  mt-0 px-5 py-[6px] block hover:lg:bg-grey100 text-left relative text-body hover:text-brandSecondary w-full p-0 leading-5 !transition !duration-75 lg:border-l-4 border-l-transparent hover:lg:border-l-4 hover:lg:!border-brandSecondary;
+}
+.menu-content .menu-list .is-parent .menu-link.menu-link-level-3{
+@apply ml-5 lg:ml-0 lg:px-6 py-[6px] block text-left relative text-body w-full p-0 leading-5 cursor-default  font-bold ;
+}
+.menu-content .menu-list .menu-trigger:after{
+    content: ">";
+    font-size: 20px; /* adjust size as needed */
+    color: #4B5563; /* Tailwind's gray-600 */
+    margin-left: 0.5rem;
+}
+.menu-content .menu-list .same-level-child .dropdown .menu-trigger {
+    @apply font-normal;
+}
+ 
+.menu-content.menu-content-level-3{
+    @apply lg:left-full top-0 mt-0 bg-brandWhite 2xl:bg-grey100 lg:w-[480px];
+}
+li.menu-item-list-level-1.top-level-1 .menu-content {
+    width: 100% !important;
+}
+.menu-content.menu-content-level-3 .menu-item-list-level-3 .menu-link.menu-link-level-4{
+    @apply [&.view-all-link]:text-brandSecondary [&.view-all-link]:font-bold lg:!px-6 py-[6px]  block text-left relative !text-body hover:lg:text-brandSecondary w-full p-0 leading-5 transition duration-75 px-6 font-normal  hover:lg:bg-grey300;
+}
+li.menu-item-list-level-1.top-level-1, li.menu-item-list-level-1.top-level-2, li.menu-item-list-level-1.top-level-3{
+    @apply block lg:border-none relative;
+}
+li.menu-item-list-level-1.top-level-1 .menu-content{
+    @apply left-0 bg-brandWhite border-grey100 !transition-all !duration-300 !ease-in-out  !translate-x-0 opacity-100 visible pointer-events-auto w-full lg:w-[31vw] 5xl:w-[480px] shadow-none lg:shadow-modalshadow border-0 rounded-none mt-5  top-0 lg:top-auto lg:absolute h-auto lg:!transform-none lg:!translate-x-0 ;
+}
+li.menu-item-list-level-1.top-level-1 .menu-content .menu-list{
+    @apply flex flex-col w-full py-4 lg:px-0 gap-4 lg:gap-2 space-y-0 overflow-auto max-h-[calc(100vh-170px)] h-full;
+}
+li.menu-item-list-level-1.top-level-1 .menu-content .menu-list li.menu-item-list-level-2 a.menu-link.menu-link-level-3{
+    @apply px-6 lg:px-6 py-[6px] block hover:bg-grey100 text-left relative text-body hover:text-brandSecondary w-full p-0 leading-5 transition duration-75 font-bold;
+}
+li.menu-item-list-level-1.top-level-1 .menu-content .menu-list li.menu-item-list-level-2 a.menu-link.menu-link-level-3[target="_new"], li.menu-item-list-level-1.top-level-1 .menu-content .menu-list li.menu-item-list-level-2 a.menu-link.menu-link-level-3[target="_blank"]{
+    @apply after:content-['\E86D'] after:text-[18px] after:absolute after:right-6 after:text-brandSecondary;
+}
+li.menu-item-list-level-1.top-level-1 .menu-content .menu-list li.menu-item-list-level-2 a.menu-link.menu-link-level-3[target="_blank"]:after{
+    content: '↗';
+    font-family: monospace;
+}
+ 
+@media (max-width: 1024px) { /* Adjust breakpoint as needed */
+    .menu-display-none {
+       @apply !hidden;
+    }
+     .menu-content .menu-list .same-level-child .dropdown .active-3.menu-trigger {
+       @apply font-bold text-base;
+    }
+}
+ 
+@media (max-width: 320px) { /* Adjust breakpoint as needed */
+    .menu-content .menu-list .active-3.menu-trigger {
+        @apply text-[13px];
+    }
+}
+/* megaMenu.css or global styles */
+.hamburger-button {
+    font-size: 24px;
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navigation-menu .menu-list {
+    padding-top: 10px;
+  }

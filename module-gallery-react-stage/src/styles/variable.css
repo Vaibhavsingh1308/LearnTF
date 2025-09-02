@@ -1,0 +1,128 @@
+:root {
+    --brandSecondary: #003D2A;
+    --brandPrimary: #35A131;
+    --brandBlack: #000;
+    --brandWhite: #fff;
+    --brandError: #bf1332;
+
+    --primary100: #def2d6;
+    --primary200: #C6E3C6;
+    --primary300: #a7d6a5;
+    --primary400: #8bb94d;
+    --primary500: #8DC63F;
+    --primary600: #394933;
+    --primaryTag:rgba(53, 161, 49, 0.5);
+    
+    --grey50: #FAFAFA;
+    --grey100: #F4F4F4;    
+    --grey150: #EFEFEF;  
+    --grey200: #DDDDDD;   
+    --grey250: #D9D9D9;    
+    --grey300: #DCDCDC;    
+    --grey350: #C4C4C4;    
+    --grey400: #CDCDCD;    
+    --grey450: #999999;    
+    --grey500: #939393;    
+    --grey550: #6e6e6e;  
+    --grey600: #4C4C4C;    
+    --grey700: #404040;  
+    --grey750: #1D1B20;  
+    --grey800: #333333;  
+    --grey900: #313131;    
+    --grey950: #191919;    
+
+    --red100: #EBC8C4;
+    --red200: #FF0000;
+    --red300: #E30000;
+    
+    --purple100: #6B5A8E;
+    --purple200: #44266E;
+    --purple300: #9C42FF;
+
+    --orange50: #E35839;
+    --orange150: #D44325;
+    --orange250: #C0300D;
+
+    --yellow50: #FED109;
+    --yellow150: #FFBB01;
+
+    --lightBlue: #01D6FF;
+    --bannerName: "Sobeys";
+
+    
+    
+    
+/* 
+
+    --green100:#8bb94d;
+    --green200:#8DC63F;
+    --green300:#def2d6;
+    --greenLight: #a7d6a5; 
+    --gray: #F4F4F4;
+    --lightGrey: #D9D9D9;
+    --greyLight: #cdcdcd;
+    --outlineSoft: #EFEFEF;
+    --darkGrey: #939393;
+    --neutral100: #dcdcdc;
+    --neutral200: #C4C4C4;
+    --neutral700: #1D1B20;
+    --neutral300: #D9D9D9;
+    --neutral400: #999999;
+    --neutral800: #313131;
+    --neutral900: #191919;
+    --neutral500: #4C4C4C;
+    --darkGrey1: #333333;
+    --darkGrey2: #333333;
+    --black100:#404040;
+    --lighterGrey: #FAFAFA;
+    --grey200:#ddd;
+    --gray100:#D9D9D9;
+
+    --lightRed: #EBC8C4;
+    --red:#FF0000;
+    --lightGreen:#C6E3C6;
+    --purple:#9C42FF;
+    --orange:#E35839;
+    --red100:#E30000;
+    --red200:#7A1D1E;
+    --gray100:#D9D9D9;
+    --black100:#404040;
+    --black200: #626262;
+    --lighterGrey: #FAFAFA;
+    --lightBlue: #01D6FF;
+    --oliveGreen: #394933;
+    --purpleDark:#44266E;
+    --orange100:#C0300D;
+    --orange200: #D44325;
+
+
+    --purple100:#6B5A8E;
+    --blue100:#00D6FF;
+    --brown100:#F3E7D7;
+    --darkgreen:#004740;
+
+   
+    --grey200:#ddd;
+    --yellow:#FFBB01;
+    --yellow100:#FED109;*/
+    
+
+
+
+    --blackgradientright: linear-gradient(90deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.48) 100%);
+    --blackgradientleft: linear-gradient(-90deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.48) 100%);
+    --cardShadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    --GlowOfferShadow: 0px 0px 8px 0px rgba(156, 66, 255, 0.35);
+    --bg-overlay:rgba(76, 76, 76, 0.50);
+    --modalshadow:0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+    --custom: 0px 9px 6px rgba(0, 0, 0, 0.25);
+    --lightpurple:rgba(156, 66, 255, 0.10);
+    --lightpurple300:rgba(156, 66, 255, 0.10);
+    --navshadow:5px 4px 8px 0px rgba(0, 0, 0, 0.25);
+    --custom: 0px 9px 6px rgba(0, 0, 0, 0.25);
+    --hovercolor: rgba(25, 25, 25, 0.80);
+    --custom-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.30), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+    --lightgray: rgba(122, 122, 122, 0.12);
+
+    --poppins: "Poppins";
+}

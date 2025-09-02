@@ -14,28 +14,22 @@ variable "SP_CLIENT_SECRET" {
 variable "SP_TENANT_ID" {
   description = "Azure Tenant ID"
 }
+variable "resource_group_name" {
+  default = "next-app-rg"
+}
 
 variable "location" {
-  default     = "East US"
-  description = "Azure Region"
+  default = "eastus"
 }
 
-variable "resource_group_name" {
-  default     = "rg-tf-vm"
-  description = "Resource Group Name"
+variable "app_service_plan_name" {
+  default = "next-app-plan"
 }
 
-variable "vm_admin_username" {
-  default     = "azureuser"
-  description = "Admin username for VM"
+variable "app_service_name" {
+  default = "next-app-web"
 }
 
-variable "vm_admin_password" {
-  description = "Admin password for VM"
-  sensitive   = true
-}
-
-variable "node_docker_image" {
-  default     = "yourdockerhubuser/node-app:latest"
-  description = "Node.js Docker image"
+variable "acr_name" {
+  default = "nextappacr"
 }

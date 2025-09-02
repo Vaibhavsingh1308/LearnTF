@@ -3,109 +3,41 @@ resource "azurerm_resource_group" "rg" {
   location = var.location
 }
 
-resource "azurerm_virtual_network" "vnet" {
-  name                = "vnet-tf"
-  address_space       = ["10.0.0.0/16"]
-  location            = var.location
+resource "azurerm_container_registry" "acr" {
+  name                = var.acr_name
   resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
+  sku                 = "Basic"
+  admin_enabled       = true
 }
 
-resource "azurerm_subnet" "subnet" {
-  name                 = "subnet-tf"
-  resource_group_name  = azurerm_resource_group.rg.name
-  virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = ["10.0.1.0/24"]
-}
-
-resource "azurerm_network_security_group" "nsg" {
-  name                = "nsg-tf"
-  location            = var.location
+resource "azurerm_app_service_plan" "plan" {
+  name                = var.app_service_plan_name
+  location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-
-  security_rule {
-    name                       = "allow-ssh"
-    priority                   = 1001
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = "22"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
-
-  security_rule {
-    name                       = "allow-http"
-    priority                   = 1002
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = "80"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
+  kind                = "Linux"
+  reserved            = true
+  sku {
+    tier = "B1"
+    size = "B1"
   }
 }
 
-resource "azurerm_public_ip" "public_ip" {
-  name                = "pip-tf"
-  location            = var.location
+resource "azurerm_web_app" "app" {
+  name                = var.app_service_name
+  location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  allocation_method   = "Dynamic"
-}
+  app_service_plan_id = azurerm_app_service_plan.plan.id
 
-resource "azurerm_network_interface" "nic" {
-  name                = "nic-tf"
-  location            = var.location
-  resource_group_name = azurerm_resource_group.rg.name
-
-  ip_configuration {
-    name                          = "internal"
-    subnet_id                     = azurerm_subnet.subnet.id
-    private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.public_ip.id
-  }
-}
-
-resource "azurerm_network_interface_security_group_association" "nsg_assoc" {
-  network_interface_id      = azurerm_network_interface.nic.id
-  network_security_group_id = azurerm_network_security_group.nsg.id
-}
-
-resource "azurerm_linux_virtual_machine" "vm" {
-  name                = "vm-tf"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = var.location
-  size                = "Standard_B1s"
-  admin_username      = var.vm_admin_username
-  admin_password      = var.vm_admin_password
-  network_interface_ids = [
-    azurerm_network_interface.nic.id,
-  ]
-
-  os_disk {
-    caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
+  site_config {
+    linux_fx_version = "DOCKER|${azurerm_container_registry.acr.login_server}/next-app:latest"
   }
 
-  source_image_reference {
-    publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-focal"
-    sku       = "20_04-lts"
-    version   = "latest"
+  app_settings = {
+    "DOCKER_REGISTRY_SERVER_URL"      = "https://${azurerm_container_registry.acr.login_server}"
+    "DOCKER_REGISTRY_SERVER_USERNAME" = azurerm_container_registry.acr.admin_username
+    "DOCKER_REGISTRY_SERVER_PASSWORD" = azurerm_container_registry.acr.admin_password
+    "WEBSITES_PORT"                   = "3000"
+    "NODE_ENV"                        = "production"
   }
-
-  computer_name = "tfvm"
-
-  custom_data = base64encode(<<EOF
-#cloud-config
-package_update: true
-packages:
-  - docker.io
-runcmd:
-  - systemctl start docker
-  - systemctl enable docker
-  - docker run -d -p 80:3000 ${var.node_docker_image}
-EOF
-  )
 }

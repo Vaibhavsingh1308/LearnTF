@@ -1,0 +1,7 @@
+@import "./layout.css";
+@import "./variable.css";
+@import "./fontello.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
