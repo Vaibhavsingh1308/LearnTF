@@ -54,8 +54,3 @@ resource "azurerm_linux_web_app" "app" {
     azurerm_container_registry.acr
   ]
 }
-
-# Output ACR login server
-output "acr_login_server" {
-  value = azurerm_container_registry.acr.login_server
-}
