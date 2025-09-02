@@ -24,15 +24,15 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Login to ACR
-        run: az acr login --name nextappacr
+        run: az acr login --name ${{ secrets.ACR_NAME }}
 
       - name: Build Docker Image
         run: |
           docker build -t next-app:latest .
-          docker tag next-app:latest nextappacr.azurecr.io/next-app:latest
+          docker tag next-app:latest ${{ secrets.ACR_NAME }}.azurecr.io/next-app:latest
 
       - name: Push Docker Image to ACR
-        run: docker push nextappacr.azurecr.io/next-app:latest
+        run: docker push ${{ secrets.ACR_NAME }}.azurecr.io/next-app:latest
 
   terraform:
     name: Terraform Deploy
