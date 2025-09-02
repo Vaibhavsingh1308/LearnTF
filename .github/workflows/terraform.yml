@@ -31,9 +31,17 @@ jobs:
         working-directory: terraform
         run: terraform init
 
+      - name: List and print directory
+        working-directory: terraform
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Files in directory:"
+          ls -la
+
       - name: Terraform Plan
         working-directory: terraform
-        run: terraform plan -var-file=dev.tfvars -out=tfplan
+        run: terraform plan -var-file=./dev.tfvars -out=tfplan
         env:
           TF_VAR_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           TF_VAR_SP_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
