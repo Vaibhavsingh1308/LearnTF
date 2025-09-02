@@ -1,0 +1,5 @@
+resource_group_name     = "myResourceGroup"
+location                = "EastUS"
+acr_name                = "nextappacr"
+app_service_plan_name   = "nextAppServicePlan"
+app_service_name        = "nextAppWebApp"

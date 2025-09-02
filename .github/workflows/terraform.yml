@@ -41,7 +41,7 @@ jobs:
 
       - name: Terraform Plan
         working-directory: terraform
-        run: terraform plan -var-file=./dev.tfvars -out=tfplan
+        run: terraform plan -var-file=dev.tfvars -out=tfplan
         env:
           TF_VAR_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           TF_VAR_SP_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
