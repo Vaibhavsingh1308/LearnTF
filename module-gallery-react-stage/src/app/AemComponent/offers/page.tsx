@@ -1,0 +1,79 @@
+import React from 'react'
+import ImageModal from "@/components/ImageModal";
+import Image from "next/image";
+import Link from 'next/link';
+export default function Offers() {
+  return (
+    <div>
+      <div className="container">
+        <div className="flex flex-wrap items-center">
+          <div className="w-full md:w-1/2 p-4">
+            {/* Left Column Content */}
+            <div className="mb-5">
+              <h1 className="text-[20px] font-bold mb-2">Offer Component</h1>
+              <p className="text-[15px] mb-4">Featured Products component Click on the configure icon then a dialog box will be open where you need to add product IDs.</p>
+            </div>
+          </div>
+          <div className="w-full md:w-1/2 p-4">
+            <div className="flex items-center justify-center">
+              <div className="relative w-[200px]">
+                {/* Image with cursor pointer */}
+                <Image
+                  src="/images/offer_card.png"
+                  width={400}
+                  height={400}
+                  className="w-full h-auto cursor-pointer"
+                  alt="Voila"
+                />
+
+                {/* Zoom Icon Positioned on Top */}
+                <div className="absolute top-0 right-0 left-0 bottom-0 flex items-center justify-center h-auto w-full">
+                  <ImageModal
+                    imageSrc="/images/offer_card.png"
+                    imageAlt="Sample Modal Image"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-row gap-[24px] mb-[20px] p-4">
+          <div className="card offersinner max-w-[220px] w-full rounded-[12px] border">
+            <div className="offerstop bg-[#000] flex flex-row items-center justify-center gap-[8px] rounded-t-[12px] min-h-[32px]">
+              <Image src="/images/scene_icon.svg" width={16} height={16} className="" alt="scene plus image" />
+              <span className="count text-white font-bold  text-[14px]">5000</span>
+              <span className="bg-[#9C42FF] text-[14px] inline-flex text-white rounded-[5px] px-[6px] font-bold radiuslr">PTS</span>
+            </div>
+            <div className="imagemid relative items-center justify-center p-[16px]">
+              <Image src="/images/product-img.svg" width={188} height={128} className="mx-auto" alt="scene plus image" />
+              <div className="right absolute right-[10px] top-[15px] h-full items-start justify-between flex flex-col">
+                <div className=" rounded-[50%] width-[60px] height-[60px] border-[#003d2a] border p-[6px]">
+                  <Link href="#"><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="w-[25px] h-[25px] p-0 transition-colors duration-300 stroke-[#003d2a]"
+                    strokeWidth={1.5}
+                    fill="none"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M16.5 3.75c-1.95 0-3.56 1.23-4.5 3.045C11.06 4.98 9.45 3.75 7.5 3.75 5.014 3.75 3 5.878 3 8.438c0 2.458 1.863 5.098 5.57 8.11.934.75 1.953 1.507 3.048 2.258a.75.75 0 00.864 0c1.095-.75 2.114-1.508 3.048-2.258 3.707-3.012 5.57-5.652 5.57-8.11 0-2.56-2.014-4.688-4.5-4.688z"
+                    />
+                  </svg></Link>
+                </div>
+                <Link href="#"><Image src="/images/pluseIcon.png" width={40} height={40} className="" alt="plus icon" /></Link>
+              </div>
+            </div>
+            <div className="bottom p-[16px] mt-[16px]">
+              <h4 className="text-[#ED1C24] text-[16px] font-bold ">$2.35 Sale <span className="text-[#000]"><del>$3.99</del></span></h4>
+              <p className="text-[12px] font-normal text-[#000] pt-[4px] pb-[8px]">608g($1.69 per 100g)</p>
+              <p className="text-[14px] font-normal text-[#000] py-[0px]"><strong>Sobeys</strong></p>
+              <p className="text-[14px] font-normal text-[#000] pt-[4px] pb-[0px]">Freshly baked sourdough loaf</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

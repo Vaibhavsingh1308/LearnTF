@@ -1,0 +1,1457 @@
+{
+    "dropdown": [
+        {
+            "target": "_self",
+            "dropdown": [
+                {
+                    "label": "Featured Brands",
+                    "link": null,
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [
+                        {
+                            "label": "Compliments",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [],
+                            "isDropdown": false,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Panache",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [],
+                            "isDropdown": false,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Rachelle Béry: Wellness Boutique",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [],
+                            "isDropdown": false,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Ricardo",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [],
+                            "isDropdown": false,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Ready For You",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [],
+                            "isDropdown": false,
+                            "bottomContent": false
+                        }
+                    ],
+                    "isDropdown": true,
+                    "bottomContent": false
+                },
+                {
+                    "label": "Grocery",
+                    "link": null,
+                    "target": "_self",
+                    "sameLevelList": "dropdown-none",
+                    "dropdown": [
+                        {
+                            "label": "Bread & bakery",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Bread",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Bagels",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "English Muffins",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Muffins",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Buns & Dinner Rolls",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Wraps, Pita & Flat Bread",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Desserts & Pastries",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Gluten-Free Bread & Bakery",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Bake at Home",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Cheese & Deli",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Cheese",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Deli Meats",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Dips, Hummus & Sauces",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Charcuterie Jelly",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Deli Crackers",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Pizza Kits & Ingredients",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Party Trays",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Meat",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Beef & Veal",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Chicken",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Turkey",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Lamb",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Exotic Meats",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Burgers",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Pork",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Hot Dogs & Sausages",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Deli Meats",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Bacon",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Other Meats",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Seafood",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Fish",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Shrimp",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Crab",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Lobster",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Frozen Seafood",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Processed Seafood",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Shellfish",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Sushi",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Squid & Octopus",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Seafood Appetizers",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Other Seafood",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Fruits & Vegetables",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Fruits",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Vegetables",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Cut Fruits & Vegetables",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Packaged Salads & Dressing",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Herbs",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Refrigerated Juices, Smoothies & Kombucha",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Seasonal Ontario Produce",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Fresh Organic Fruits",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Fresh Organic Vegetables",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Plant-based",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Meat Alternatives",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Plant Based Dinners & Entrees",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Non-Dairy Milk & Cream",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Non-Dairy Cheese",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Non-Dairy Butter",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Non-Dairy Yogurt",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Non-Dairy Dips & Condiments",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Non-Dairy Frozen Dessert",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Tofu",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Veggie Burgers",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Soya",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Dairy & Eggs",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Milk",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Cream & Creamers",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Butter & Margarine",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Yogurt",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Sour Cream",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Whipped Cream",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Eggs",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Pantry",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Cereal & Breakfast",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Spreads, Syrup & Honey",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Crackers, Cookies & Desserts",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Baking & Cooking Ingredients",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Pasta, Noodles & Sauce",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Rice, Grains & Legumes",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Condiments",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Spices & Seasoning",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Marinades & Sauces",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Oils, Vinegars & Salad Dressing",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Canned & Pickled",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Soup & Broth",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Easy Prep Meals & Sides",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Snacks & Candy",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Candy & Chocolate",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Chips",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Popcorn",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Energy, Granola and Cereal Bars",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Rice Cakes",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Nuts, Seeds and Trail Mixes",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Dried Fruit",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Jerky",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Pudding & Gelatin Snacks",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Fruit Flavoured Snacks",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Fruit Cups",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Cookies & Crackers",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Beer, Wine & Ciders",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Beer",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Wine",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Ciders",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Cocktail Mixes",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Coolers",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Non-Alcoholic Drinks",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Drinks",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Coffee",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Tea & Hot Drinks",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Water",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Soft Drinks",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Fruit & Vegetable Juice",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Iced Tea & Lemonade",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Kombucha & Wellness",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Sports & Energy Drinks",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Mixes & Syrups",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Frozen",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Frozen Meals, Entrees & Sides",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Frozen Appetizers & Snacks",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Frozen Pizza",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Frozen Meat & Seafood",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Frozen Fruits & Vegetables",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Ice Cream & Treats",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Frozen Bread & Breakfast",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Frozen Beverages & Ice",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Prepared Meals & Sides",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Ready To Eat Entrees & Sides",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Soups",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Sushi",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Sandwiches, Subs & Wraps",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Oliver & Bonacini Restaurant Meals",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Salads",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Lunch & Snack Kits",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Fresh Pasta & Pasta Sauce",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Pizza",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Snacks",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Entertaining Trays",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "International & Local Foods",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Local",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "International",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        }
+                    ],
+                    "isDropdown": true,
+                    "bottomContent": true
+                },
+                {
+                    "label": "Home, Wellness & Beauty",
+                    "link": null,
+                    "target": "_self",
+                    "sameLevelList": "dropdown-none",
+                    "dropdown": [
+                        {
+                            "label": "Baby",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Baby Food & Accessories",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Diapers & Accessories",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Baby Bath & Skin Care",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Baby Pain & Fever Relief",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Pets",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Cat Food & Accessories",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Dog Food & Accessories",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Other Pet Food & Accessories",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Pet Health Care & Supplements",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Personal Care & Beauty",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Body, Skin & Lip Care",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Deodorant & Antiperspirant",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Feminine Products",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Hair Care",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Oral Care",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Shaving & Grooming",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Soap, Bath & Shower",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Beauty Products",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Pharmacy & Wellness",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Medicine & Health",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Vitamins & Supplements",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Kitchen & Household",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Food Wraps & Containers",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Kitchen Supplies",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Diet & Fitness",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Paper Products",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Cleaning",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Laundry",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Garbage Bags & Liners",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Air Fresheners & Deodorizers",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Home & Hardware",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Insect & Pest Control",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Bed & Bath",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Floral & Garden",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Flowers",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Garden Care",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Garden Equipment",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Plants",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Electronics",
+                            "link": null,
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [],
+                            "isDropdown": false,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Toys, Games & Party Supplies",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [
+                                {
+                                    "label": "Toys",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Games",
+                                    "link": null,
+                                    "image": null,
+                                    "target": "_self"
+                                },
+                                {
+                                    "label": "Party Supplies",
+                                    "link": "#",
+                                    "image": null,
+                                    "target": "_self"
+                                }
+                            ],
+                            "isDropdown": true,
+                            "bottomContent": false
+                        },
+                        {
+                            "label": "Gift Cards",
+                            "link": "#",
+                            "target": "_self",
+                            "sameLevelList": null,
+                            "dropdown": [],
+                            "isDropdown": false,
+                            "bottomContent": false
+                        }
+                    ],
+                    "isDropdown": true,
+                    "bottomContent": true
+                }
+            ],
+            "title": "Shop By Department",
+            "url": "#",
+            "isDropdown": true
+        },
+        {
+            "target": "_self",
+            "dropdown": [
+                {
+                    "label": "Weekly Flyer",
+                    "link": "#",
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                },
+                {
+                    "label": "Scene+ Offers for You",
+                    "link": "#",
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                },
+                {
+                    "label": "Contest",
+                    "link": "#",
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                },
+                {
+                    "label": "Value Flyer",
+                    "link": "#",
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                },
+                {
+                    "label": "About Scene+",
+                    "link": "#",
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                },
+                {
+                    "label": "Verified Prices",
+                    "link": "#",
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                }
+            ],
+            "title": "Flyer & Offers",
+            "url": "#",
+            "isDropdown": true
+        },
+        {
+            "target": "_self",
+            "dropdown": [
+                {
+                    "label": "360Health Pharmacy & Wellness",
+                    "link": "#",
+                    "target": "_blank",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                },
+                {
+                    "label": "Order Entertaining Platters",
+                    "link": "#",
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                },
+                {
+                    "label": "Voila",
+                    "link": "#",
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                },
+                {
+                    "label": "Order Flowers",
+                    "link": "#",
+                    "target": "_blank",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                }
+            ],
+            "title": "Our Services",
+            "url": "#",
+            "isDropdown": true
+        },
+        {
+            "target": "_self",
+            "dropdown": [
+                {
+                    "label": "Discover Recipes",
+                    "link": "#",
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                },
+                {
+                    "label": "My Recipe Lists",
+                    "link": "#",
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                },
+                {
+                    "label": "Article Collection",
+                    "link": "#",
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                },
+                {
+                    "label": "Roast Calculator",
+                    "link": "#",
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                },
+                {
+                    "label": "Video Gallery",
+                    "link": "#",
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                },
+                {
+                    "label": "Meal Plan",
+                    "link": "#",
+                    "target": "_self",
+                    "sameLevelList": null,
+                    "dropdown": [],
+                    "isDropdown": false,
+                    "bottomContent": false
+                }
+            ],
+            "title": "Recipes & More",
+            "url": "#",
+            "isDropdown": true
+        }
+    ],
+    "isDropdown": true,
+    ":type": "empire-sobeys/components/navigation"
+}
