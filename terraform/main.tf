@@ -24,10 +24,8 @@ resource "azurerm_service_plan" "plan" {
   resource_group_name = azurerm_resource_group.rg.name
 
   # Required attributes for current AzureRM version
-  os_type   = "Linux"
-  sku_name  = "B1"  # Equivalent to Basic B1
-  kind      = "Linux"
-  reserved  = true   # Required for Linux
+  os_type  = "Linux"
+  sku_name = "B1" # Equivalent to Basic B1
 }
 
 # Linux Web App
