@@ -60,15 +60,32 @@ resource "azurerm_linux_web_app" "app" {
   ]
 }
 
-# Give Web App permission to pull from ACR
-# Assign AcrPull to the Web App’s Managed Identity
-resource "azurerm_role_assignment" "acr_pull" {
-  scope                = azurerm_container_registry.acr.id
-  role_definition_name = "AcrPull"
-  principal_id         = azurerm_linux_web_app.app.identity[0].principal_id
+# # Give Web App permission to pull from ACR
+# # Assign AcrPull to the Web App’s Managed Identity
+# resource "azurerm_role_assignment" "acr_pull" {
+#   scope                = azurerm_container_registry.acr.id
+#   role_definition_name = "AcrPull"
+#   principal_id         = azurerm_linux_web_app.app.identity[0].principal_id
 
+#   depends_on = [
+#     azurerm_linux_web_app.app,
+#     azurerm_container_registry.acr
+#   ]
+# }
+
+# Automated AcrPull Role Assignment using Azure CLI
+resource "null_resource" "assign_acr_pull" {
   depends_on = [
     azurerm_linux_web_app.app,
     azurerm_container_registry.acr
   ]
+
+  provisioner "local-exec" {
+    command = <<EOT
+      az role assignment create \
+        --assignee ${azurerm_linux_web_app.app.identity[0].principal_id} \
+        --role "AcrPull" \
+        --scope ${azurerm_container_registry.acr.id}
+    EOT
+  }
 }
