@@ -7,7 +7,7 @@ provider "azurerm" {
   tenant_id       = var.SP_TENANT_ID
 }
 
-# Resource Group (single RG controlled by variables)
+# Resource Group
 resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
   location = var.location
@@ -19,7 +19,7 @@ resource "azurerm_container_registry" "acr" {
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   sku                 = "Premium"
-  admin_enabled       = true
+  admin_enabled       = false # no need for admin user
 }
 
 # App Service Plan (Linux)
@@ -29,26 +29,38 @@ resource "azurerm_service_plan" "plan" {
   resource_group_name = azurerm_resource_group.rg.name
   os_type             = "Linux"
 
-  sku_name = "S1"  # required
+  sku_name = "S1"  # Standard tier required for Docker
 }
 
 # Linux Web App (Next.js containerized app)
 resource "azurerm_linux_web_app" "app" {
-  name                = "nextapp-web"
+  name                = var.web_app_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   service_plan_id     = azurerm_service_plan.plan.id
 
+  identity {
+    type = "SystemAssigned" # Managed Identity
+  }
+
   site_config {
-    linux_fx_version = "DOCKER|${azurerm_container_registry.acr.login_server}/next-app:latest"
+    linux_fx_version = "DOCKER|${azurerm_container_registry.acr.login_server}/${var.docker_image_name}:latest"
+    app_command_line = "" # optional
   }
 
   app_settings = {
-    DOCKER_REGISTRY_SERVER_URL      = "https://${azurerm_container_registry.acr.login_server}"
-    DOCKER_REGISTRY_SERVER_USERNAME = azurerm_container_registry.acr.admin_username
-    DOCKER_REGISTRY_SERVER_PASSWORD = azurerm_container_registry.acr.admin_password
-    WEBSITES_PORT                   = "3000"
-    NODE_ENV                        = "production"
+    WEBSITES_PORT = "3000"
+    NODE_ENV      = "production"
   }
+
+  depends_on = [
+    azurerm_container_registry.acr
+  ]
 }
 
+# Role assignment: give the Web App permission to pull from ACR
+resource "azurerm_role_assignment" "acr_pull" {
+  scope                = azurerm_container_registry.acr.id
+  role_definition_name = "AcrPull"
+  principal_id         = azurerm_linux_web_app.app.identity[0].principal_id
+}
