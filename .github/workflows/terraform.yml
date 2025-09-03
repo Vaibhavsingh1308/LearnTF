@@ -50,8 +50,9 @@ jobs:
           TF_VAR_ACR_NAME: nextappacr
           TF_VAR_IMAGE_NAME: next-app
       
-      - name: Terraform Destroy
-        run: terraform destroy -auto-approve -var-file=dev.tfvars
+      # - name: Terraform Destroy
+      #   run: terraform destroy -auto-approve -var-file=dev.tfvars
+
 
       - name: Terraform Apply
         working-directory: terraform
