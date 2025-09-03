@@ -10,5 +10,5 @@ web_app_name          = "nextapp-web"
 
 # Azure Container Registry
 acr_name              = "nextappacr"
-docker_image_name     = "next-app"
-docker_image_tag      = "latest"
+docker_image_name = "next-app"
+docker_image_tag  = "latest"

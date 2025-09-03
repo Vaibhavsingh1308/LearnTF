@@ -44,9 +44,11 @@ resource "azurerm_linux_web_app" "app" {
   }
 
   site_config {
-  linux_fx_version = "DOCKER|${azurerm_container_registry.acr.login_server}/${var.docker_image_name}:${var.docker_image_tag}"
+  application_stack {
+    docker_registry_url = "https://${azurerm_container_registry.acr.login_server}"
+    docker_image_name   = "${var.docker_image_name}:${var.docker_image_tag}"
+  }
 }
-
 
   app_settings = {
     WEBSITES_PORT = "3000"
