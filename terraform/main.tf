@@ -29,7 +29,7 @@ resource "azurerm_service_plan" "plan" {
   resource_group_name = azurerm_resource_group.rg.name
 
   os_type  = "Linux"
-  sku_name = "B1" # Basic B1 tier
+  sku_name = "F1" # free tier
 }
 
 # Linux Web App (Next.js containerized app)
