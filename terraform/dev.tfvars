@@ -1,5 +1,5 @@
 resource_group_name      = "nextapp-rg"
-location                 = "East US"
+location                 = "Central US"
 acr_name                 = "nextappacr"
 app_service_plan_name    = "nextapp-plan"
 app_service_name         = "nextapp-webapp"
