@@ -44,8 +44,9 @@ resource "azurerm_linux_web_app" "app" {
   }
 
   site_config {
-    # leave linux_fx_version empty; it will be auto-detected
-  }
+  linux_fx_version = "DOCKER|${azurerm_container_registry.acr.login_server}/${var.docker_image_name}:${var.docker_image_tag}"
+}
+
 
   app_settings = {
     WEBSITES_PORT = "3000"
@@ -58,8 +59,14 @@ resource "azurerm_linux_web_app" "app" {
 }
 
 # Give Web App permission to pull from ACR
+# Assign AcrPull to the Web App’s Managed Identity
 resource "azurerm_role_assignment" "acr_pull" {
   scope                = azurerm_container_registry.acr.id
   role_definition_name = "AcrPull"
   principal_id         = azurerm_linux_web_app.app.identity[0].principal_id
+
+  depends_on = [
+    azurerm_linux_web_app.app,
+    azurerm_container_registry.acr
+  ]
 }
