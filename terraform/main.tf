@@ -19,7 +19,7 @@ resource "azurerm_container_registry" "acr" {
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   sku                 = "Premium"
-  admin_enabled       = false # no need for admin user
+  admin_enabled       = false
 }
 
 # App Service Plan (Linux)
@@ -32,7 +32,7 @@ resource "azurerm_service_plan" "plan" {
   sku_name = "S1"  # Standard tier required for Docker
 }
 
-# Linux Web App (Next.js containerized app)
+# Linux Web App with Managed Identity for ACR
 resource "azurerm_linux_web_app" "app" {
   name                = var.web_app_name
   location            = azurerm_resource_group.rg.location
@@ -40,12 +40,12 @@ resource "azurerm_linux_web_app" "app" {
   service_plan_id     = azurerm_service_plan.plan.id
 
   identity {
-    type = "SystemAssigned" # Managed Identity
+    type = "SystemAssigned"
   }
 
   site_config {
-    linux_fx_version = "DOCKER|${azurerm_container_registry.acr.login_server}/${var.docker_image_name}:latest"
-    app_command_line = "" # optional
+    # Reference your ACR image here
+    linux_fx_version = "DOCKER|${azurerm_container_registry.acr.login_server}/${var.docker_image_name}:${var.docker_image_tag}"
   }
 
   app_settings = {
@@ -58,7 +58,7 @@ resource "azurerm_linux_web_app" "app" {
   ]
 }
 
-# Role assignment: give the Web App permission to pull from ACR
+# Give Web App permission to pull from ACR
 resource "azurerm_role_assignment" "acr_pull" {
   scope                = azurerm_container_registry.acr.id
   role_definition_name = "AcrPull"
