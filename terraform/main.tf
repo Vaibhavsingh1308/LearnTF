@@ -2,7 +2,7 @@ provider "azurerm" {
   features {}
 }
 
-# Resource Group
+# Resource Group (single RG controlled by variables)
 resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
   location = var.location
@@ -23,12 +23,11 @@ resource "azurerm_service_plan" "plan" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
-  # Required attributes for current AzureRM version
   os_type  = "Linux"
-  sku_name = "B1" # Equivalent to Basic B1
+  sku_name = "B1" # Basic B1 tier
 }
 
-# Linux Web App
+# Linux Web App (Next.js containerized app)
 resource "azurerm_linux_web_app" "app" {
   name                = var.app_service_name
   location            = azurerm_resource_group.rg.location
@@ -36,6 +35,7 @@ resource "azurerm_linux_web_app" "app" {
   service_plan_id     = azurerm_service_plan.plan.id
 
   site_config {
+    # Deploy container from ACR
     linux_fx_version = "DOCKER|${azurerm_container_registry.acr.login_server}/next-app:latest"
   }
 
@@ -43,8 +43,8 @@ resource "azurerm_linux_web_app" "app" {
     DOCKER_REGISTRY_SERVER_URL      = "https://${azurerm_container_registry.acr.login_server}"
     DOCKER_REGISTRY_SERVER_USERNAME = azurerm_container_registry.acr.admin_username
     DOCKER_REGISTRY_SERVER_PASSWORD = azurerm_container_registry.acr.admin_password
-    WEBSITES_PORT                   = "3000"
-    NODE_ENV                        = "production"
+    WEBSITES_PORT                   = "3000"       # Next.js default port
+    NODE_ENV                        = "production" # Node environment
   }
 
   depends_on = [
