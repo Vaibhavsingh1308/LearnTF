@@ -44,8 +44,7 @@ resource "azurerm_linux_web_app" "app" {
   }
 
   site_config {
-    # Reference your ACR image here
-    linux_fx_version = "DOCKER|${azurerm_container_registry.acr.login_server}/${var.docker_image_name}:${var.docker_image_tag}"
+    # leave linux_fx_version empty; it will be auto-detected
   }
 
   app_settings = {
