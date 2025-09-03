@@ -34,13 +34,12 @@ resource "azurerm_service_plan" "plan" {
 
 # Linux Web App (Next.js containerized app)
 resource "azurerm_linux_web_app" "app" {
-  name                = var.app_service_name
+  name                = "nextapp-web"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   service_plan_id     = azurerm_service_plan.plan.id
 
   site_config {
-    # Deploy container from ACR
     linux_fx_version = "DOCKER|${azurerm_container_registry.acr.login_server}/next-app:latest"
   }
 
@@ -48,12 +47,8 @@ resource "azurerm_linux_web_app" "app" {
     DOCKER_REGISTRY_SERVER_URL      = "https://${azurerm_container_registry.acr.login_server}"
     DOCKER_REGISTRY_SERVER_USERNAME = azurerm_container_registry.acr.admin_username
     DOCKER_REGISTRY_SERVER_PASSWORD = azurerm_container_registry.acr.admin_password
-    WEBSITES_PORT                   = "3000"       # Next.js default port
-    NODE_ENV                        = "production" # Node environment
+    WEBSITES_PORT                   = "3000"
+    NODE_ENV                        = "production"
   }
-
-  depends_on = [
-    azurerm_service_plan.plan,
-    azurerm_container_registry.acr
-  ]
 }
+

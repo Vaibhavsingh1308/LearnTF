@@ -38,3 +38,13 @@ variable "app_service_name" {
   description = "Web App name"
   type        = string
 }
+variable "docker_image_name" {
+  type        = string
+  description = "Docker image name to deploy"
+}
+
+variable "docker_image_tag" {
+  type        = string
+  default     = "latest"
+  description = "Docker image tag"
+}
