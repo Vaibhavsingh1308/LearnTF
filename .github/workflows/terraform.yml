@@ -105,6 +105,7 @@ jobs:
           ls -la
 
       - name: Build Docker Image
+        working-directory: module-gallery-react-stage
         run: |
           docker build -t next-app:latest .
           docker tag next-app:latest ${{ needs.terraform.outputs.acr_login_server }}/next-app:latest
