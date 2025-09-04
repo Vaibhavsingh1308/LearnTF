@@ -6,6 +6,14 @@ provider "azurerm" {
   client_secret   = var.SP_CLIENT_SECRET
   tenant_id       = var.SP_TENANT_ID
 }
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "TF-stat"
+    storage_account_name = "learntf"
+    container_name       = "learn-tf"
+    key                  = "learn.tfstate"
+  }
+}
 
 # Resource Group
 resource "azurerm_resource_group" "rg" {
