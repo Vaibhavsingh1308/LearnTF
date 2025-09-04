@@ -96,6 +96,14 @@ jobs:
       - name: Login to ACR
         run: az acr login --name ${{ needs.terraform.outputs.acr_name }}
 
+      - name: List and print directory
+        working-directory: terraform
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Files in directory:"
+          ls -la
+
       - name: Build Docker Image
         run: |
           docker build -t next-app:latest .
