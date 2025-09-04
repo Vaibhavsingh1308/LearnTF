@@ -76,7 +76,8 @@ jobs:
           echo "acr_login_server=$(terraform output -raw acr_login_server)" >> $GITHUB_OUTPUT
           echo "acr_name=$(terraform output -raw acr_name)" >> $GITHUB_OUTPUT
 
-  build-and-push-docker:
+  
+build-and-push-docker:
     name: Build & Push Docker to ACR
     runs-on: ubuntu-latest
     needs: terraform
@@ -103,4 +104,5 @@ jobs:
 
       - name: Push Docker Image to ACR
         run: docker push ${{ needs.terraform.outputs.acr_login_server }}/next-app:latest
+
 
