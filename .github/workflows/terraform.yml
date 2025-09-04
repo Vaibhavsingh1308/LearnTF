@@ -11,6 +11,9 @@ jobs:
     name: Terraform Deploy
     runs-on: ubuntu-latest
 
+    outputs:
+      acr_login_server: ${{ steps.acr.outputs.acr_login_server }}
+
     permissions:
       id-token: write
       contents: read
@@ -65,11 +68,13 @@ jobs:
           TF_VAR_ACR_NAME: nextappacr
           TF_VAR_IMAGE_NAME: next-app
 
-      - name: Output ACR Login Server
+      
+      - name: Output ACR Info
         id: acr
         working-directory: terraform
         run: |
-          echo "ACR_LOGIN_SERVER=$(terraform output -raw acr_login_server)" >> $GITHUB_ENV
+          echo "acr_login_server=$(terraform output -raw acr_login_server)" >> $GITHUB_OUTPUT
+          echo "acr_name=$(terraform output -raw acr_name)" >> $GITHUB_OUTPUT
 
   build-and-push-docker:
     name: Build & Push Docker to ACR
@@ -89,12 +94,13 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Login to ACR
-        run: az acr login --name ${{ env.ACR_LOGIN_SERVER }}
+        run: az acr login --name ${{ needs.terraform.outputs.acr_name }}
 
       - name: Build Docker Image
         run: |
           docker build -t next-app:latest .
-          docker tag next-app:latest ${{ env.ACR_LOGIN_SERVER }}/next-app:latest
+          docker tag next-app:latest ${{ needs.terraform.outputs.acr_login_server }}/next-app:latest
 
       - name: Push Docker Image to ACR
-        run: docker push ${{ env.ACR_LOGIN_SERVER }}/next-app:latest
+        run: docker push ${{ needs.terraform.outputs.acr_login_server }}/next-app:latest
+
