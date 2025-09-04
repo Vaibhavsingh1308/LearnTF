@@ -18,7 +18,7 @@ FROM node:20-alpine AS runner
 
 WORKDIR /app
 ENV NODE_ENV=production
-ENV PORT=3000
+ENV PORT=${PORT:-3000}
 
 # Copy only required files
 COPY --from=builder /app/package*.json ./
@@ -29,4 +29,6 @@ COPY --from=builder /app/public ./public
 RUN npm ci --only=production
 
 EXPOSE 3000
+
+# Start the app
 CMD ["npm", "start"]
