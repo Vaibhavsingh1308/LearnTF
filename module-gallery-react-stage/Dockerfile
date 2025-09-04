@@ -3,24 +3,25 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Install dependencies (with cache optimization)
+# Install dependencies
 COPY package*.json ./
 RUN npm ci
 
-# Copy source
+# Copy source code
 COPY . .
 
-# Build the app
+# Build the Next.js app
 RUN npm run build
 
-# Stage 2: Run the built app
+# Stage 2: Production image
 FROM node:20-alpine AS runner
 
 WORKDIR /app
-ENV NODE_ENV=production
-ENV PORT=${PORT:-3000}
 
-# Copy only required files
+ENV NODE_ENV=production
+ENV PORT=3000
+
+# Copy built app from builder
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
@@ -30,5 +31,5 @@ RUN npm ci --only=production
 
 EXPOSE 3000
 
-# Start the app
+# Start Next.js app
 CMD ["npm", "start"]

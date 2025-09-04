@@ -1,4 +1,4 @@
-name: Terraform Deploy
+name: Terraform + Next.js Deploy
 
 on:
   push:
@@ -34,14 +34,6 @@ jobs:
       - name: Terraform Init
         working-directory: terraform
         run: terraform init
-
-      - name: List and print directory
-        working-directory: terraform
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "Files in directory:"
-          ls -la
 
       - name: Terraform Plan
         working-directory: terraform
@@ -92,22 +84,17 @@ jobs:
       - name: Login to ACR
         run: az acr login --name ${{ needs.terraform.outputs.acr_name }}
 
-      - name: List and print directory
-        working-directory: terraform
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "Files in directory:"
-          ls -la
-
-      - name: Build Docker Image
+      - name: Build Docker Image with cache
         working-directory: module-gallery-react-stage
         run: |
-          docker build -t next-app:latest .
-          docker tag next-app:latest ${{ needs.terraform.outputs.acr_login_server }}/next-app:latest
+          IMAGE_TAG=${GITHUB_REF_NAME}-latest
+          docker build --cache-from ${{ needs.terraform.outputs.acr_login_server }}/next-app:latest -t next-app:$IMAGE_TAG .
+          docker tag next-app:$IMAGE_TAG ${{ needs.terraform.outputs.acr_login_server }}/next-app:$IMAGE_TAG
 
       - name: Push Docker Image to ACR
-        run: docker push ${{ needs.terraform.outputs.acr_login_server }}/next-app:latest
+        run: |
+          IMAGE_TAG=${GITHUB_REF_NAME}-latest
+          docker push ${{ needs.terraform.outputs.acr_login_server }}/next-app:$IMAGE_TAG
 
   deploy-to-webapp:
     name: Deploy Docker Image to Azure Web App
@@ -120,10 +107,22 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Deploy to Azure Web App
+      - name: Deploy to Azure Web App using Managed Identity
         run: |
+          IMAGE_TAG=${GITHUB_REF_NAME}-latest
+          
           az webapp config container set \
             --name nextapp-web \
             --resource-group nextapp-rg \
-            --docker-custom-image-name ${{ needs.build-and-push-docker.outputs.acr_login_server }}/next-app:latest \
-            --docker-registry-server-url https://${{ needs.build-and-push-docker.outputs.acr_login_server }}
+            --docker-custom-image-name ${{ needs.build-and-push-docker.outputs.acr_login_server }}/next-app:$IMAGE_TAG
+
+          # Set environment variables
+          az webapp config appsettings set \
+            --name nextapp-web \
+            --resource-group nextapp-rg \
+            --settings WEBSITES_PORT=3000 NODE_ENV=production
+
+          # Restart Web App
+          az webapp restart \
+            --name nextapp-web \
+            --resource-group nextapp-rg
