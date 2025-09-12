@@ -109,15 +109,24 @@ jobs:
 
       - name: Deploy Docker Image to Azure Web App
         run: |
-          IMAGE_TAG=${GITHUB_REF_NAME}-latest
+          # Use proper branch name for image tag (strip refs/heads/)
+          IMAGE_TAG=${GITHUB_REF_NAME##*/}-latest
+
+          # Get ACR info from previous job outputs
           ACR_NAME=${{ needs.build-and-push-docker.outputs.acr_name }}
           ACR_LOGIN_SERVER=${{ needs.build-and-push-docker.outputs.acr_login_server }}
 
-          # Optional: Get ACR credentials if not using Managed Identity
+          # Validate ACR_NAME
+          if [ -z "$ACR_NAME" ]; then
+            echo "Error: ACR_NAME is empty!"
+            exit 1
+          fi
+
+          # Get ACR credentials (if not using Managed Identity)
           ACR_USERNAME=$(az acr credential show -n $ACR_NAME --query "username" -o tsv)
           ACR_PASSWORD=$(az acr credential show -n $ACR_NAME --query "passwords[0].value" -o tsv)
 
-          # Deploy container to Web App
+          # Deploy container to Azure Web App
           az webapp config container set \
             --name nextapp-web \
             --resource-group nextapp-rg \
