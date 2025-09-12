@@ -97,47 +97,47 @@ jobs:
           docker push ${{ needs.terraform.outputs.acr_login_server }}/next-app:$IMAGE_TAG
 
   deploy-to-webapp:
-  name: Deploy Docker Image to Azure Web App
-  runs-on: ubuntu-latest
-  needs: build-and-push-docker
+    name: Deploy Docker Image to Azure Web App
+    runs-on: ubuntu-latest
+    needs: build-and-push-docker
 
-  steps:
-    - name: Azure Login
-      uses: azure/login@v2
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    steps:
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Deploy Docker Image to Azure Web App
-      run: |
-        IMAGE_TAG=${GITHUB_REF_NAME}-latest
-        ACR_NAME=${{ needs.build-and-push-docker.outputs.acr_name }}
-        ACR_LOGIN_SERVER=${{ needs.build-and-push-docker.outputs.acr_login_server }}
+      - name: Deploy Docker Image to Azure Web App
+        run: |
+          IMAGE_TAG=${GITHUB_REF_NAME}-latest
+          ACR_NAME=${{ needs.build-and-push-docker.outputs.acr_name }}
+          ACR_LOGIN_SERVER=${{ needs.build-and-push-docker.outputs.acr_login_server }}
 
-        # Optional: Get ACR credentials if not using Managed Identity
-        ACR_USERNAME=$(az acr credential show -n $ACR_NAME --query "username" -o tsv)
-        ACR_PASSWORD=$(az acr credential show -n $ACR_NAME --query "passwords[0].value" -o tsv)
+          # Optional: Get ACR credentials if not using Managed Identity
+          ACR_USERNAME=$(az acr credential show -n $ACR_NAME --query "username" -o tsv)
+          ACR_PASSWORD=$(az acr credential show -n $ACR_NAME --query "passwords[0].value" -o tsv)
 
-        # Deploy container to Web App
-        az webapp config container set \
-          --name nextapp-web \
-          --resource-group nextapp-rg \
-          --container-image-name $ACR_LOGIN_SERVER/next-app:$IMAGE_TAG \
-          --registry-login-server $ACR_LOGIN_SERVER \
-          --registry-username $ACR_USERNAME \
-          --registry-password $ACR_PASSWORD
+          # Deploy container to Web App
+          az webapp config container set \
+            --name nextapp-web \
+            --resource-group nextapp-rg \
+            --container-image-name $ACR_LOGIN_SERVER/next-app:$IMAGE_TAG \
+            --registry-login-server $ACR_LOGIN_SERVER \
+            --registry-username $ACR_USERNAME \
+            --registry-password $ACR_PASSWORD
 
-        # Set environment variables
-        az webapp config appsettings set \
-          --name nextapp-web \
-          --resource-group nextapp-rg \
-          --settings NODE_ENV=production WEBSITES_PORT=3000 WEBSITES_ENABLE_APP_SERVICE_STORAGE=true
+          # Set environment variables
+          az webapp config appsettings set \
+            --name nextapp-web \
+            --resource-group nextapp-rg \
+            --settings NODE_ENV=production WEBSITES_PORT=3000 WEBSITES_ENABLE_APP_SERVICE_STORAGE=true
 
-        # Restart Web App
-        az webapp restart \
-          --name nextapp-web \
-          --resource-group nextapp-rg
+          # Restart Web App
+          az webapp restart \
+            --name nextapp-web \
+            --resource-group nextapp-rg
 
-    - name: Verify deployment
-      run: |
-        echo "Deployment finished. Web App status:"
-        az webapp show --name nextapp-web --resource-group nextapp-rg --query state
+      - name: Verify deployment
+        run: |
+          echo "Deployment finished. Web App status:"
+          az webapp show --name nextapp-web --resource-group nextapp-rg --query state
