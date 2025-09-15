@@ -122,13 +122,12 @@ jobs:
           ACR_NAME=${{ needs.build-and-push-docker.outputs.acr_name }}
           ACR_LOGIN_SERVER=${{ needs.build-and-push-docker.outputs.acr_login_server }}
 
-          # Validate ACR_NAME
-          if [ -z "$ACR_NAME" ]; then
-            echo "Error: ACR_NAME is empty!"
+          if [ -z "$ACR_NAME" ] || [ -z "$ACR_LOGIN_SERVER" ]; then
+            echo "Error: ACR outputs are empty!"
             exit 1
           fi
 
-          # Get ACR credentials (if not using Managed Identity)
+          # Get ACR credentials
           ACR_USERNAME=$(az acr credential show -n $ACR_NAME --query "username" -o tsv)
           ACR_PASSWORD=$(az acr credential show -n $ACR_NAME --query "passwords[0].value" -o tsv)
 
